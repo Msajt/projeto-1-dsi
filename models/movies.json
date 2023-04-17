@@ -1,0 +1,44 @@
+[
+    {
+        "id": "213976be-9157-4daa-992b-5b93f68540a6",
+        "title": "The Wolf of Wall Street",
+        "year": "2013",
+        "genre": "Biography, Comedy, Crime",
+        "rating": "8.2"
+    },
+    {
+        "title": "Avatar: The Way of Water",
+        "year": "2022",
+        "genre": "Action, Adventure, Fantasy",
+        "rating": "7.9",
+        "id": "9017c8f4-3406-474a-a528-bac9da1675d8"
+    },
+    {
+        "title": "Avengers: End Game",
+        "year": "2020",
+        "genre": "Action, Adventure, Fantasy",
+        "rating": "7.9",
+        "id": "e2fec764-7a7b-46d6-96d6-de9d3a6dec6b"
+    },
+    {
+        "title": "Avengers: Infinity War",
+        "year": "2020",
+        "genre": "Action, Adventure, Fantasy",
+        "rating": "7.9",
+        "id": "3711087e-2863-427e-86d8-1548c3e7b0db"
+    },
+    {
+        "id": "131c8241-fcae-4425-94b7-e410fb285018",
+        "title": "Mission Impossible: Rogue Nation",
+        "year": "2015",
+        "genre": "Action, Adventure, Fantasy",
+        "rating": "7.9"
+    },
+    {
+        "id": "46990fb8-e634-4a56-9a3a-393a884e2c14",
+        "title": "The Little Rascals",
+        "year": "1991",
+        "genre": "Adventure, Comedy",
+        "rating": "9.0"
+    }
+]
