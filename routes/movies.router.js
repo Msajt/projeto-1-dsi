@@ -12,5 +12,7 @@ moviesRouter.get("/:movieId", moviesController.getMovie);
 moviesRouter.post("/", moviesController.postMovie);
 //? MÉTODO DELETE (deleta um filme)
 moviesRouter.delete("/:movieId", moviesController.deleteMovie);
+//? MÉTODO PUT (troca dados do filme)
+moviesRouter.put("/:movieId", moviesController.putMovie);
 
 module.exports = moviesRouter;

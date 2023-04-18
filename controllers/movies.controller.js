@@ -64,9 +64,54 @@ function deleteMovie(req, res) {
     } else res.status(404).json({ error: "Movie not found" });
 }
 
+//? Método PUT
+function putMovie(req, res) {
+    const movieId = req.params.movieId;
+    const movie = movies.find((movie) => movie.id === movieId);
+
+    if (movie !== undefined) {
+        const idx = movies.findIndex((movie) => {
+            return movie.id === movieId;
+        });
+
+        if (idx != -1) {
+            //! Fazer as mudanças no filme
+            let movieChanges = {
+                id: movieId,
+                title: req.body.title,
+                year: req.body.year,
+                genre: req.body.genre,
+                rating: req.body.rating,
+            };
+            for (info in movies[idx]) {
+                if (movieChanges[info] != undefined)
+                    movies[idx][info] = movieChanges[info];
+            }
+
+            //movies[idx] = { id: movieId, ...req.body };
+            writeToFile(movies);
+            res.status(200).json(movie);
+        } else res.status(404).json({ error: "Movie not found" });
+    } else res.status(404).json({ error: "Movie not found" });
+
+    if (
+        !req.body.title ||
+        !req.body.year ||
+        !req.body.genre ||
+        !req.body.rating
+    ) {
+        return res.status(404).json({
+            error: "Missing movie informations",
+        });
+    }
+
+    console.log("teste");
+}
+
 module.exports = {
     getMovies,
     getMovie,
     postMovie,
     deleteMovie,
+    putMovie,
 };

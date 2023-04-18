@@ -53,6 +53,36 @@ function showDeleteMovie() {
         .then((txt) => showDataOnScreen(txt));
 }
 
+function showPostMovie() {
+    let movie = {
+        title: document.getElementById("post-put-title").value,
+        year: document.getElementById("post-put-year").value,
+        genre: document.getElementById("post-put-genre").value,
+        rating: document.getElementById("post-put-rating").value,
+    };
+    let status = "";
+
+    for (info in movie) {
+        if (movie[info] === "")
+            return showDataStatusOnScreen(404, "Dados insuficientes");
+    }
+
+    fetch(`http://localhost:${PORT}/movies`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movie),
+    }).then((res) => {
+        status = res.status;
+        showDataStatusOnScreen(status, "Criado");
+
+        console.log(JSON.stringify(movie));
+
+        return console.log(res.text());
+    });
+}
+
 async function getMovieInfo(movie) {
     let { title, genre, year, rating } = movie;
     let movieImage = await getMovieLink(title);
