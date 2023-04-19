@@ -84,7 +84,7 @@ function putMovie(req, res) {
                 rating: req.body.rating,
             };
             for (info in movies[idx]) {
-                if (movieChanges[info] != undefined)
+                if (movieChanges[info] != "")
                     movies[idx][info] = movieChanges[info];
             }
 
