@@ -4,7 +4,9 @@ let movies = require("../models/movies.json");
 
 //? Método GET geral
 function getMovies(req, res) {
-    res.status(200).json(movies);
+    if (movies == null || movies == undefined)
+        res.status(404).json({ error: "Não há filmes na lista" });
+    else res.status(200).json(movies);
 }
 
 //? Método GET específico

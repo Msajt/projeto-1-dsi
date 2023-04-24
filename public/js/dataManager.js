@@ -13,9 +13,10 @@ function showGetMovies() {
             return res.text();
         })
         .then(async (txt) => await showDataOnScreen(txt))
-        .catch((err) =>
-            showDataStatusOnScreen(status, "Não há filmes na lista")
-        );
+        .catch((err) => {
+            showDataStatusOnScreen(status, "Não há filmes na lista");
+            document.getElementById("movies-content").innerHTML = "";
+        });
 }
 
 function showGetMovie() {
